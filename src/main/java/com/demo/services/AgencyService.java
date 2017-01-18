@@ -11,14 +11,17 @@ import java.util.Map;
 public class AgencyService {
 
     public ArrayList getAgencies() {
-        ArrayList<Agency> agencies=new ArrayList();
+        ArrayList agencies=new ArrayList();
 
         Map result = new HashMap();
+
         result.put("1", "Agency1");
         result.put("2", "Agency2");
         result.put("3", "Agency3");
         result.put("4", "Agency4");
         result.put("5", "Agency5");
+
+        agencies.add(result);
         return agencies;
     }
 }

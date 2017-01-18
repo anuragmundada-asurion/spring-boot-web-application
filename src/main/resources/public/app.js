@@ -1,11 +1,15 @@
-function getString() {
-    console.log(document.getElementById('text'));
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
-            document.getElementById('text').innerHTML = this.responseText;
+function getAgencies() {
+    var xmlhttp = new XMLHttpRequest();
+    var url = "api/v1/agencies";
+
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            myFunction(xmlhttp.responseText);
         }
-    };
-    xhttp.open('GET', 'api/v1/agencies', true);
-    xhttp.send();
+    }
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+function myFunction(response) {
+   document.getElementById("1").innerHTML = response;
 }

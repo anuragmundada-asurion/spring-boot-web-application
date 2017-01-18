@@ -21,10 +21,10 @@ public class AgencyController {
     @RequestMapping(value = "/agencies", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getAgencies() {
        ArrayList agencies = agencyDAO.getAgencies();
-        System.out.println("Test" + agencies);
+        //System.out.println("Test" + agencies);
         if(!agencies.isEmpty()) {
             return new ResponseEntity<Object>(agencies, HttpStatus.OK);
         } else
-            return null;
+            return new ResponseEntity<Object>("No agencies found", HttpStatus.OK);
     }
 }
